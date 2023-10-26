@@ -4,6 +4,8 @@
 /node_modules
 /.pnp
 .pnp.js
+/model-training/training-data
+/model-training/logs
 
 # testing
 /coverage
