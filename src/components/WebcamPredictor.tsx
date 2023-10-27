@@ -20,7 +20,7 @@ const WebcamPredictor: FC<WebcamPredictorProps> = ({ onPredict }) => {
     const loadModel = async () => {
         let model = null;
         try {
-            model = await tf.loadLayersModel('model/model.json');
+            model = await tf.loadLayersModel('../model/model.json');
         } catch (e) {
             console.log(e);
         }
@@ -40,10 +40,10 @@ const WebcamPredictor: FC<WebcamPredictorProps> = ({ onPredict }) => {
     };
 
     const capture = useCallback(async () => {
-        // if (!model) {
-        //     console.log('no model');
-        //     return;
-        // }
+        if (!model) {
+            console.log('no model');
+            return;
+        }
         const imageSrc = cameraRef.current?.getScreenshot();
         setImg(imageSrc);
 
