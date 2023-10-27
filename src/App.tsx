@@ -4,6 +4,7 @@ import Home from './pages/Home';
 import Navbar from './components/Navbar';
 import Game from './pages/Game';
 import { gameOrder } from './constants';
+import End from './pages/End';
 
 function App() {
     return (
@@ -14,6 +15,7 @@ function App() {
                     <Stack alignItems={'center'} height={'100%'}>
                         <Routes>
                             <Route path="/" element={<Home />} />
+                            <Route path="/end" element={<End />} />
                             {gameOrder.map((item) => (
                                 <Route
                                     path={`/game/${item}`}

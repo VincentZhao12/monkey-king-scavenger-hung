@@ -100,6 +100,7 @@ const Game: FC<GameProps> = ({ item }) => {
                                     as="a"
                                     href={videos[item as keyof typeof videos]}
                                     target="_blank"
+                                    color="blue"
                                 >
                                     here
                                 </Link>
