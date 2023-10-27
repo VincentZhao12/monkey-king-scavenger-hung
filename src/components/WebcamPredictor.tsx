@@ -3,6 +3,7 @@ import Webcam from 'react-webcam';
 import * as tf from '@tensorflow/tfjs';
 import { LayersModel } from '@tensorflow/tfjs';
 import { predictionValues } from '../constants';
+import { Button } from '@chakra-ui/react';
 
 interface WebcamPredictorProps {
     onPredict: (res: string) => any;
@@ -69,19 +70,29 @@ const WebcamPredictor: FC<WebcamPredictorProps> = ({ onPredict }) => {
     return img ? (
         <div className="webcam">
             <img src={img} alt="webcam pic" />
-            <button
+            <Button
+                colorScheme={'red'}
+                width={'100%'}
+                marginTop={'0.5em'}
                 onClick={() => {
                     setImg(undefined);
                     console.log('klafjsdlf');
                 }}
             >
                 retake pic
-            </button>
+            </Button>
         </div>
     ) : (
         <div className="webcam">
             <Webcam ref={cameraRef} />
-            <button onClick={capture}>take pic</button>
+            <Button
+                colorScheme={'red'}
+                onClick={capture}
+                width={'100%'}
+                marginTop={'0.5em'}
+            >
+                take pic
+            </Button>
         </div>
     );
 };

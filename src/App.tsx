@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Home from './pages/Home';
 import Navbar from './components/Navbar';
 import Game from './pages/Game';
+import { gameOrder } from './constants';
 
 function App() {
     return (
@@ -13,7 +14,12 @@ function App() {
                     <Stack alignItems={'center'} height={'100%'}>
                         <Routes>
                             <Route path="/" element={<Home />} />
-                            <Route path="/game/:item" element={<Game />} />
+                            {gameOrder.map((item) => (
+                                <Route
+                                    path={`/game/${item}`}
+                                    element={<Game item={item} />}
+                                />
+                            ))}
                         </Routes>
                     </Stack>
                 </BrowserRouter>

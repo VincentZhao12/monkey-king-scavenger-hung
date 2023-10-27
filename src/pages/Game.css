@@ -1,0 +1,13 @@
+@keyframes slideInFromLeft {
+    0% {
+        transform: translateX(-400%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+.character {
+    /* This section calls the slideInFromLeft animation we defined above */
+    animation: 0.5s ease-out 0s 1 slideInFromLeft;
+}
